@@ -6,15 +6,14 @@ fun main() {
     val minuteDeparture = 39
     val travelTime = 457
 
-    val transferOfHour = travelTime / 60   //перевел travelTime в часы
-    val transferOfMinute = travelTime % 60   //вывел остаток минут из travelTime
+    val transferOfMinutes = hourDeparture * Minutes_In_Hours
+    val summMinutes = transferOfMinutes + minuteDeparture + travelTime
 
-    val arrivalHour = hourDeparture + transferOfHour
-    val arrivalMinute = minuteDeparture + transferOfMinute
-
+    val arrivalHour = summMinutes / Minutes_In_Hours
+    val arrivalMinute = summMinutes % Minutes_In_Hours
 
     println("Время прибытия $arrivalHour : $arrivalMinute")
 
-
-
 }
+
+const val Minutes_In_Hours = 60
